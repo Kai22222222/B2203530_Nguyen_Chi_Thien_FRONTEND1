@@ -25,8 +25,8 @@ contact: { type: Object, required: true },
 </div>
 <div class="p-1">
 <strong>Liên hệ yêu thích:&nbsp;</strong>
-<i v-if="contact.favorite" class="fas fa-check"></i>
-<i v-else class="fas fa-times"></i>
+<font-awesome-icon v-if="contact.favorite" :icon="['fas', 'heart']" />
+<font-awesome-icon  v-else class="fas fa-times" :icon="['far', 'heart']" />
 </div>
 </div>
 </template>

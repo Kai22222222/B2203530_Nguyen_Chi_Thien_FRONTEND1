@@ -6,7 +6,7 @@
 <div class="mt-3 col-md-6">
 <h4>
 Danh bạ
-<i class="fas fa-address-book"></i>
+<font-awesome-icon :icon="['fas', 'address-book']" />
 </h4>
 <ContactList
 v-if="filteredContactsCount > 0"
@@ -16,17 +16,20 @@ v-model:activeIndex="activeIndex"
 <p v-else>Không có liên hệ nào.</p>
 <div class="mt-3 row justify-content-around align-items-center">
 <button class="btn btn-sm btn-primary" @click="refreshList()">
-<i class="fas fa-redo"></i> Làm mới
+<font-awesome-icon :icon="['fas', 'arrows-rotate']" />Làm mới
 </button>
+
+
 <button class="btn btn-sm btn-success" @click="goToAddContact">
-<i class="fas fa-plus"></i> Thêm mới
+    
+<font-awesome-icon :icon="['fas', 'plus']" /> Thêm mới
 </button>
 
 <button
 class="btn btn-sm btn-danger"
 @click="removeAllContacts"
 >
-<i class="fas fa-trash"></i> Xóa tất cả
+<font-awesome-icon :icon="['fas', 'trash']" />Xóa tất cả
 </button>
 </div>
 </div>
@@ -44,7 +47,7 @@ params: { id: activeContact._id },
 }"
 >
 <span class="mt-2 badge badge-warning">
-<i class="fas fa-edit"></i> Hiệu chỉnh</span
+<font-awesome-icon :icon="['fas', 'sliders']" /> Hiệu chỉnh</span
 >
 </router-link>
 </div>
@@ -123,11 +126,11 @@ console.log(error);
 }
 }
 },
-
-},
 goToAddContact() {
 this.$router.push({ name: "contact.add" });
 },
+},
+
 mounted() {
 this.refreshList();
 },
